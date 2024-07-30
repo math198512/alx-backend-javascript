@@ -31,12 +31,10 @@ export default class HolbertonCourse {
     this._length = newLength;
   }
 
-  set students(newStudents) {
-    if (!Array.isArray(newStudents)) { throw new TypeError('Students must be an array'); }
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < newStudents.length; i++) {
-      if (typeof newStudents[i] !== 'string') { throw new TypeError('Students must be an array of strings'); }
+  set students(students) {
+    if (!(students instanceof Array) || !students.every((s) => typeof s === 'string')) {
+      throw new TypeError('Students must be an array of strings');
     }
-    this._students = newStudents;
+    this._students = students;
   }
 }
