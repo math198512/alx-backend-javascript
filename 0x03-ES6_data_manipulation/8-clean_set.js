@@ -4,7 +4,7 @@ export default function cleanSet(set, startString) {
   }
   let cleanString = '';
   for (const value of set) {
-    if (value.startsWith(startString)) {
+    if (value && value.startsWith(startString)) {
       cleanString += `${value.slice(startString.length)}-`;
     }
   }
