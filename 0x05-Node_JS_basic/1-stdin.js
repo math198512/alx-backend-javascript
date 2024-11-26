@@ -5,7 +5,6 @@
  * When the user ends the program, it should display 'This important software is now closing' (followed by a new line)
  * @author Tarik Horaichi <https://github.com/math198512>
  */
-const process = require('process');
 
 console.log('Welcome to Holberton School, what is your name?');
 
@@ -15,7 +14,6 @@ process.stdin.on('data', (data) => {
   const name = data.trim();
   console.log(`Your name is: ${name}`);
 });
-process.on('SIGINT', () => {
-  console.log('This important software is now closing');
-  process.exit();
+process.stdin.on('exit', () => {
+  process.stdout.write('This important software is now closing');
 });
