@@ -4,7 +4,7 @@
  * @author Tarik Horaichi <https://github.com/math198512>
  */
 const displayMessage = (msg) => {
-    console.log(msg);
+  console.log(msg);
 };
 
 module.exports = displayMessage;
