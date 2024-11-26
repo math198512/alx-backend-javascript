@@ -6,7 +6,7 @@
  * @author Tarik Horaichi <https://github.com/math198512>
  */
 
-console.log('Welcome to Holberton School, what is your name?');
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
 process.stdin.on('readable', () => {
   const name = process.stdin.read();
