@@ -1,13 +1,13 @@
 const fs = require('fs');
 
 const countStudents = (path) => {
-  fs.readFile(`${path}`, 'utf8', (err, f) => {
-    if (err) {
-      throw new Error('Cannot load the database');
-    }
-    console.log(f);
-    return
-  });
+  const fileLines = fs.readFileSync(`${path}`, 'utf-8').toString().split('\n');
+  if (!fs.existsSync(path)) {
+    throw new Error('Cannot load the database');
+  }
+  if (!fs.statSync(path).isFile()) {
+    throw new Error('Cannot load the database');
+  }
+  return fileLines;
 };
-
 module.exports = countStudents;
