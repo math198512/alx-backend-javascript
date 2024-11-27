@@ -8,6 +8,6 @@ const countStudents = (path) => {
     throw new Error('Cannot load the database');
   }
   const fileLines = fs.readFileSync(`${path}`, 'utf-8').toString().split('\n');
-  console.log(fileLines.length - 1);
+  console.log("Number of students:", fileLines.length - 1);
 };
 module.exports = countStudents;
