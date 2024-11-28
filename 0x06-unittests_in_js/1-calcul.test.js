@@ -22,7 +22,7 @@ describe('calculateNumber', () => {
 
   it('should return "Error" when dividing by zero', () => {
     assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0), 'Error');
-    assert.strictEqual(calculateNumber('DIVIDE', 4.2, 0), 'Error');
+    assert.strictEqual(calculateNumber('DIVIDE', 4.2, 0.1), 'Error');
   });
 
   it('should return 0 for unknown type', () => {
