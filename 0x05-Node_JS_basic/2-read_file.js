@@ -1,12 +1,12 @@
 const fs = require('fs');
 
-function countStudents (databasePath) {
+function countStudents(databasePath) {
   try {
     // Read the database file synchronously
     const data = fs.readFileSync(databasePath, 'utf8');
 
     // Split the data into lines and filter out empty lines
-    const lines = data.split('\n').filter(line => line.trim() !== '');
+    const lines = data.split('\n').filter((line) => line.trim() !== '');
 
     // Remove the header row
     const studentLines = lines.slice(1);
@@ -19,7 +19,7 @@ function countStudents (databasePath) {
     const fieldGroups = {};
 
     // Process each student line
-    studentLines.forEach(line => {
+    studentLines.forEach((line) => {
       // Split the line into columns
       const firstname = line.split(',')[0];
       const field = line.split(',')[3];
