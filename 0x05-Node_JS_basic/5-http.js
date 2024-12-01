@@ -61,8 +61,10 @@ const app = http.createServer((req, res) => {
     const fileName = process.argv[2];
     countStudents(fileName).then(
       (responseText) => {
+        res.statusCode = 200;
         res.end(Buffer.from(responseText));
-      });
+      },
+    );
   }
 });
 
