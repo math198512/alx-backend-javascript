@@ -39,8 +39,13 @@ async function countStudents(path) {
     });
 
     // Log students in each field
+    let counter = 0;
     for (const [field, students] of Object.entries(fieldStudents)) {
-      responseText += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
+      responseText += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`;
+      if (counter != Object.entries(fieldStudents).length - 1) {
+        responseText += `\n`
+      };
+      counter++;
     }
     return responseText;
   } catch (error) {
