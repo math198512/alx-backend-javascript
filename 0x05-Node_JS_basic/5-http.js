@@ -19,7 +19,7 @@ async function countStudents(path) {
 
     // Total number of students
     const totalStudents = studentLines.length;
-    let responseText = `Number of students: ${totalStudents}\n`;
+    let responseText = `This is the list of our students\nNumber of students: ${totalStudents}\n`;
 
     // Process students by field
     const fieldStudents = {};
