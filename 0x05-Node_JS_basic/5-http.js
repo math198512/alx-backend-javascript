@@ -50,7 +50,7 @@ async function countStudents(path) {
     return responseText;
   } catch (error) {
     // If file can't be read, throw specific error
-    const responseText = 'Cannot load the database';
+    const responseText = 'This is the list of our students\nCannot load the database';
     return responseText;
   }
 }
