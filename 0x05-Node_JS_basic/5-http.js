@@ -62,7 +62,6 @@ const app = http.createServer((req, res) => {
     countStudents(fileName).then(
       (responseText) => {
         res.end(Buffer.from(responseText));
-        res.setHeader('Content-Type', 'text/plain');
       });
   }
 });
