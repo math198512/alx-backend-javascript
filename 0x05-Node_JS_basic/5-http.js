@@ -59,7 +59,11 @@ const app = http.createServer((req, res) => {
   } else if (req.url === '/students') {
     // Show the list of students
     const fileName = process.argv[2];
-    countStudents(fileName).then((responseText) => res.end(responseText));
+    countStudents(fileName).then(
+      (responseText) => {
+        res.end(Buffer.from(responseText));
+        res.setHeader('Content-Type', 'text/plain');
+      });
   }
 });
 
