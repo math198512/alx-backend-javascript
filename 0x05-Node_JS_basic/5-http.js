@@ -42,10 +42,10 @@ async function countStudents(path) {
     let counter = 0;
     for (const [field, students] of Object.entries(fieldStudents)) {
       responseText += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`;
-      if (counter != Object.entries(fieldStudents).length - 1) {
-        responseText += `\n`
-      };
-      counter++;
+      if (counter < Object.entries(fieldStudents).length - 1) {
+        responseText += '\n';
+      }
+      counter += 1;
     }
     return responseText;
   } catch (error) {
