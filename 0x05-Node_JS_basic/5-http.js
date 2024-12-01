@@ -50,7 +50,8 @@ async function countStudents(path) {
     return responseText;
   } catch (error) {
     // If file can't be read, throw specific error
-    throw new Error('Cannot load the database');
+    const responseText = 'Cannot load the database';
+    return responseText;
   }
 }
 
@@ -69,8 +70,8 @@ const app = http.createServer((req, res) => {
         res.statusCode = 200;
         res.end(Buffer.from(responseText));
       },
-    ).catch((err) => {
-      console.error(err);
+    ).catch(() => {
+      throw new Error('Cannot load the database');
     });
   }
 });
