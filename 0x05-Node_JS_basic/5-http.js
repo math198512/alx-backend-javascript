@@ -64,7 +64,9 @@ const app = http.createServer((req, res) => {
         res.statusCode = 200;
         res.end(Buffer.from(responseText));
       },
-    );
+    ).catch((err) => {
+      console.error(err);
+    });
   }
 });
 
